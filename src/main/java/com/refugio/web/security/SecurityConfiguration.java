@@ -42,7 +42,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		
 		http.authorizeRequests()
 		.antMatchers("/animal/**")
-		.authenticated()
+		.hasRole("1")
 		.antMatchers("/")
 		.permitAll()
 		.and()
@@ -57,7 +57,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		//cual sera la ruta cuando el usuario haga logout
 		.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 		//cual será la ruta a la que seremos redirigidos al cerrar sesion
-		.logoutSuccessUrl("/login");
+		.logoutSuccessUrl("/login")
+		.and()
+		.exceptionHandling()
+		.accessDeniedPage("/403");
 		
 	}
 }

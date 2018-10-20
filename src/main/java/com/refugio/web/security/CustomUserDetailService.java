@@ -34,7 +34,8 @@ public class CustomUserDetailService implements UserDetailsService {
 			
 			user = org.springframework.security.core.userdetails.User.withUsername(username);
 			user.password(new BCryptPasswordEncoder().encode(usuario.getPassword()));
-			user.roles("USER");
+			//le pasamos el rol que tiene el usuario desde la BBDD
+			user.roles(String.valueOf(usuario.getRol().getNombre()));
 			
 			
 		} else {

@@ -1,5 +1,5 @@
 package com.refugio.web.entity;
-// Generated 04-10-2018 1:08:05 by Hibernate Tools 5.2.11.Final
+// Generated 19-oct-2018 21:31:54 by Hibernate Tools 5.2.11.Final
 
 import java.util.HashSet;
 import java.util.Set;
